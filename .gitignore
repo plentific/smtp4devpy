@@ -1,0 +1,4 @@
+venv
+.tm_properties
+__pycache__
+*.egg-info
