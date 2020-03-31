@@ -28,7 +28,7 @@ class Smtp4Dev:
         :param base_url: the base URL to access the smtp4dev. No final /.
         :raises: ApiError
         """
-        self.base_url = base_url
+        self.base_url = base_url + '/api/Messages'
 
     def list_messages(self, unread_only=False):
         """
@@ -38,7 +38,7 @@ class Smtp4Dev:
         :raises: ApiError
         """
         response = requests.get(
-            f"{self.base_url}/api/Messages?sortColumn=receivedDate&sortIsDescending=true"
+            f"{self.base_url}?sortColumn=receivedDate&sortIsDescending=true"
         )
         if response.status_code != 200:
             raise ApiError()
@@ -53,7 +53,7 @@ class Smtp4Dev:
         :param msg_id: the message's pk (a UUID)
         :raises: ApiError
         """
-        response = requests.post(f"{self.base_url}/api/Messages/{msg_id}", data="")
+        response = requests.post(f"{self.base_url}/{msg_id}", data="")
         if response.status_code != 200:
             raise ApiError()
 
@@ -64,7 +64,7 @@ class Smtp4Dev:
         :returns: a Message instance
         :raises: ApiError
         """
-        response = requests.get(f"{self.base_url}/api/Messages/{msg_id}")
+        response = requests.get(f"{self.base_url}/{msg_id}")
         if response.status_code != 200:
             raise ApiError()
 
@@ -74,7 +74,7 @@ class Smtp4Dev:
         return Message.deserialize(response.json(), html=body)
 
     def _get_message_body(self, msg_id):
-        response = requests.get(f"{self.base_url}/api/Messages/{msg_id}/html")
+        response = requests.get(f"{self.base_url}/{msg_id}/html")
         if response.status_code != 200:
             raise ApiError()
 
