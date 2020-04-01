@@ -9,9 +9,10 @@ jobs:
       - uses: actions/checkout@master
       - uses: actions/setup-python@1.2.0
         with:
-          python-version: 3.8.2
+          python-version: '3.8.x'
       - name: Install Poetry
         uses: dschep/install-poetry-action@v1.3
         with:
           version: 1.0.5
-          run: poetry run pytest
+      - name: Run tests
+        run: poetry run pytest
