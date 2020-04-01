@@ -22,5 +22,5 @@ client = Smtp4Dev('http://localhost:8080')
 messages = client.list_messages()
 email = client.get_message(next(messages))
 print(email)
--> [From: romeo@email.com To: juliet@email.com Subject: Meeting Friday night]
+"[From: romeo@email.com To: juliet@email.com Subject: Meeting Friday night]"
 ```
