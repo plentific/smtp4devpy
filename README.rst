@@ -24,7 +24,6 @@ Usage
 Example usage::
 
   from smtp4dev import Smtp4Dev
-  m = client.get_message(a[0].pk)
   client = Smtp4Dev('http://localhost:8080')
   a = list(client.list_messages())
   m = client.get_message(a[0].pk)

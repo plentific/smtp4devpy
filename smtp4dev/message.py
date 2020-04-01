@@ -49,7 +49,6 @@ class Message:
         :returns: Message
         """
         unread = False
-        attachments = 0
         if "attachmentCount" in msg:
             # This is the excerpt from the list
             attachments = msg["attachmentCount"]
