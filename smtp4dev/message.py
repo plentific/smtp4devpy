@@ -23,6 +23,7 @@ class Message:
     ):
         """
         Constructor of an email
+
         :param pk: the email's primary key (a UUID)
         :param sender: the email's sender
         :param recipients: a tuple of all recipients of the email
@@ -43,7 +44,8 @@ class Message:
     @staticmethod
     def deserialize(msg, html=None):
         """
-        Deseriaize a dict of data into a Message
+        Deserialize a dict of data into a Message
+
         :param msg: The message as JSON
         :param html: The message's body as HTML (str)
         :returns: Message
@@ -78,7 +80,8 @@ class Message:
 
     def set_body(self, html):
         """
-        Sets the message's body
+        Set the message's body
+
         :param html: the html body to set
         """
         self.body = html

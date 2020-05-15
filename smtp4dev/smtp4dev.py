@@ -25,14 +25,16 @@ class Smtp4Dev:
     def __init__(self, base_url):
         """
         Client for a SMTP4dev instance.
+
         :param base_url: the base URL to access the smtp4dev. No final /.
         :raises: ApiError
         """
-        self.base_url = base_url + '/api/Messages'
+        self.base_url = base_url + "/api/Messages"
 
     def list_messages(self, unread_only=False):
         """
         List all messages in the smtp4dev inbox.
+
         :param unread_only: Only retrieve the unread messages
         :returns: a generator of Message items
         :raises: ApiError
@@ -50,6 +52,7 @@ class Smtp4Dev:
     def mark_message_read(self, msg_id):
         """
         Mark a message a read in the inbox.
+
         :param msg_id: the message's pk (a UUID)
         :raises: ApiError
         """
@@ -60,6 +63,7 @@ class Smtp4Dev:
     def get_message(self, msg_id):
         """
         Retrieve a specific message by ID.
+
         :param msg_id: the messages's pk (a UUID)
         :returns: a Message instance
         :raises: ApiError
