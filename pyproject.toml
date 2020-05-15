@@ -1,8 +1,9 @@
 [tool.poetry]
 name = "smtp4dev"
-version = "0.1.0"
+version = "0.1.1"
 description = "Provides access to emails caught by the SMTP4dev development server"
 authors = ["Guillaume Pasquet <guillaume.pasquet@plentific.com>"]
+readme = "README.md"
 
 [tool.poetry.dependencies]
 python = ">=3.6"
