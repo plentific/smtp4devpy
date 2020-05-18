@@ -14,6 +14,7 @@ pytest = "^4.6"
 black = "^19.10b0"
 pylint = "^2.4.4"
 sphinx = "^3.0.3"
+sphinx_rtd_theme = "^0.4.3"
 
 [build-system]
 requires = ["poetry>=1.0"]

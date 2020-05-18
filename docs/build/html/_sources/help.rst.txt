@@ -1,6 +1,0 @@
-Blah blah blah
-==============
-
-
-stuff stuff::
-  yadda yadda
